@@ -1,0 +1,237 @@
+{
+  "adventures": {
+    "crypte": [
+      {
+        "id": "crypte_01",
+        "title": "L'Entrée Sombre",
+        "description": "Vous pénétrez dans la crypte. L'air est lourd et une odeur de mort flotte. Un squelette se dresse devant vous !",
+        "imageAsset": "crypt_entrance",
+        "type": "combat",
+        "enemyId": "skeleton"
+      },
+      {
+        "id": "crypte_02",
+        "title": "Le Coffre Suspect",
+        "description": "Un coffre ancien repose dans un coin. Il semble contenir quelque chose de précieux... ou de dangereux.",
+        "imageAsset": "suspicious_chest",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "open",
+            "text": "Ouvrir le coffre",
+            "outcome": {
+              "statCheck": "chance",
+              "checkThreshold": 3,
+              "successOutcome": {
+                "damage": -3,
+                "message": "Vous trouvez une potion de soin ! Vous récupérez 3 PV."
+              },
+              "failureOutcome": {
+                "enemyId": "mimic",
+                "message": "C'était un piège ! Le coffre est un Mimic !"
+              }
+            }
+          },
+          {
+            "id": "ignore",
+            "text": "Ignorer et continuer",
+            "outcome": {
+              "message": "La prudence est mère de sûreté. Vous continuez votre chemin."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_03",
+        "title": "La Salle des Toiles",
+        "description": "Des toiles d'araignée recouvrent les murs et le plafond. Quelque chose bouge dans l'obscurité...",
+        "imageAsset": "spider_room",
+        "type": "combat",
+        "enemyId": "spider"
+      },
+      {
+        "id": "crypte_04",
+        "title": "Le Rodeur Mystérieux",
+        "description": "Un homme encapuchonné apparaît de nulle part. \"Psst, voyageur... J'ai une potion qui pourrait t'intéresser.\"",
+        "imageAsset": "mysterious_stranger",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "drink",
+            "text": "Boire la potion",
+            "outcome": {
+              "statCheck": "charisme",
+              "checkThreshold": 2,
+              "successOutcome": {
+                "damage": -5,
+                "message": "C'était une vraie potion de soin ! Vous récupérez 5 PV."
+              },
+              "failureOutcome": {
+                "damage": 3,
+                "message": "C'était du poison ! Vous perdez 3 PV."
+              }
+            }
+          },
+          {
+            "id": "refuse",
+            "text": "Refuser poliment",
+            "outcome": {
+              "message": "L'homme disparaît dans l'ombre avec un ricanement."
+            }
+          },
+          {
+            "id": "attack",
+            "text": "L'attaquer",
+            "outcome": {
+              "enemyId": "bandit",
+              "message": "Le rodeur sort une dague ! C'était un bandit !"
+            }
+          }
+        ],
+        "classConditions": [
+          {
+            "characterClassId": "rogue",
+            "condition": "sameBackground",
+            "description": "Un ancien compagnon... Il connaît vos techniques !",
+            "extraRequirements": 1
+          }
+        ]
+      },
+      {
+        "id": "crypte_05",
+        "title": "La Meute",
+        "description": "Des grognements résonnent dans le couloir. Une meute de loups affamés vous encercle ! Le chef de meute vous fixe avec des yeux terrifiants...",
+        "imageAsset": "wolf_pack",
+        "type": "combat",
+        "enemyId": "wolf",
+        "preCombatCheck": {
+          "type": "intimidation",
+          "statRequired": "charisme",
+          "threshold": 4,
+          "penaltyOnFail": "noDoubles",
+          "penaltyValue": 1,
+          "description": "Le regard du loup alpha vous glace le sang. Résistez à l'intimidation !",
+          "successMessage": "Vous soutenez son regard. Les loups hésitent.",
+          "failureMessage": "Vous êtes terrorisé ! Vos réflexes sont paralysés. (Doubles désactivés)"
+        }
+      },
+      {
+        "id": "crypte_06",
+        "title": "L'Autel Profané",
+        "description": "Un autel couvert de sang se dresse au centre de la pièce. Un cultiste y pratique un rituel obscur. Il lève les yeux et commence à psalmodier une incantation terrifiante...",
+        "imageAsset": "dark_altar",
+        "type": "combat",
+        "enemyId": "cultist",
+        "preCombatCheck": {
+          "type": "surprise",
+          "statRequired": "intelligence",
+          "threshold": 3,
+          "penaltyOnFail": "lessHp",
+          "penaltyValue": 3,
+          "description": "Le cultiste lance un sort de terreur ! Résistez mentalement !",
+          "successMessage": "Votre esprit reste clair. Le sort n'a aucun effet.",
+          "failureMessage": "La terreur vous submerge ! Vous perdez 3 PV."
+        }
+      },
+      {
+        "id": "crypte_07",
+        "title": "Le Piège à Flèches",
+        "description": "Le sol s'enfonce légèrement sous vos pieds. Vous entendez un déclic mécanique...",
+        "imageAsset": "arrow_trap",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "dodge",
+            "text": "Se jeter au sol",
+            "outcome": {
+              "statCheck": "dexterite",
+              "checkThreshold": 4,
+              "successOutcome": {
+                "message": "Vous évitez les flèches de justesse !"
+              },
+              "failureOutcome": {
+                "damage": 4,
+                "message": "Plusieurs flèches vous touchent ! Vous perdez 4 PV."
+              }
+            }
+          },
+          {
+            "id": "shield",
+            "text": "Se protéger",
+            "outcome": {
+              "damage": 2,
+              "message": "Vous vous protégez partiellement. Vous perdez 2 PV."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_08",
+        "title": "Le Spectre Errant",
+        "description": "Une forme translucide flotte à travers les murs. Son regard vide se pose sur vous.",
+        "imageAsset": "ghost_room",
+        "type": "combat",
+        "enemyId": "ghost"
+      },
+      {
+        "id": "crypte_09",
+        "title": "La Fontaine Ancienne",
+        "description": "Une fontaine miraculeusement préservée coule encore. L'eau semble pure... ou peut-être pas.",
+        "imageAsset": "ancient_fountain",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "drink",
+            "text": "Boire l'eau",
+            "outcome": {
+              "statCheck": "intelligence",
+              "checkThreshold": 3,
+              "successOutcome": {
+                "damage": -4,
+                "message": "L'eau est magique ! Vous récupérez 4 PV."
+              },
+              "failureOutcome": {
+                "damage": 2,
+                "message": "L'eau était contaminée... Vous perdez 2 PV."
+              }
+            }
+          },
+          {
+            "id": "wash",
+            "text": "Se laver les blessures",
+            "outcome": {
+              "damage": -1,
+              "message": "Vous nettoyez vos plaies. Vous récupérez 1 PV."
+            }
+          },
+          {
+            "id": "ignore",
+            "text": "Continuer sans boire",
+            "outcome": {
+              "message": "Vous décidez de ne pas prendre de risque."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_10",
+        "title": "L'Antre du Troll",
+        "description": "L'odeur est insoutenable. Un troll des cavernes se dresse devant vous, massue en main !",
+        "imageAsset": "troll_lair",
+        "type": "combat",
+        "enemyId": "troll"
+      }
+    ],
+    "foret_maudite": [
+      {
+        "id": "forest_01",
+        "title": "L'Orée de la Forêt",
+        "description": "Les arbres se resserrent autour de vous. Un gobelin surgit d'un buisson !",
+        "imageAsset": "forest_edge",
+        "type": "combat",
+        "enemyId": "goblin"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,236 @@
+﻿{
+  "adventures": {
+    "crypte": [
+      {
+        "id": "crypte_01",
+        "title": "L'Entr├®e Sombre",
+        "description": "Vous p├®n├®trez dans la crypte. L'air est lourd et une odeur de mort flotte. Un squelette se dresse devant vous !",
+        "imageAsset": "crypt_entrance",
+        "type": "combat",
+        "enemyId": "skeleton"
+      },
+      {
+        "id": "crypte_02",
+        "title": "Le Coffre Suspect",
+        "description": "Un coffre ancien repose dans un coin. Il semble contenir quelque chose de pr├®cieux... ou de dangereux.",
+        "imageAsset": "suspicious_chest",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "open",
+            "text": "Ouvrir le coffre",
+            "outcome": {
+              "statCheck": "chance",
+              "checkThreshold": 3,
+              "successOutcome": {
+                "damage": -3,
+                "message": "Vous trouvez une potion de soin ! Vous r├®cup├®rez 3 PV."
+              },
+              "failureOutcome": {
+                "enemyId": "mimic",
+                "message": "C'├®tait un pi├¿ge ! Le coffre est un Mimic !"
+              }
+            }
+          },
+          {
+            "id": "ignore",
+            "text": "Ignorer et continuer",
+            "outcome": {
+              "message": "La prudence est m├¿re de s├╗ret├®. Vous continuez votre chemin."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_03",
+        "title": "La Salle des Toiles",
+        "description": "Des toiles d'araign├®e recouvrent les murs et le plafond. Quelque chose bouge dans l'obscurit├®...",
+        "imageAsset": "spider_room",
+        "type": "combat",
+        "enemyId": "spider"
+      },
+      {
+        "id": "crypte_04",
+        "title": "Le Rodeur Myst├®rieux",
+        "description": "Un homme encapuchonn├® appara├«t de nulle part. \"Psst, voyageur... J'ai une potion qui pourrait t'int├®resser.\"",
+        "imageAsset": "mysterious_stranger",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "drink",
+            "text": "Boire la potion",
+            "outcome": {
+              "statCheck": "charisme",
+              "checkThreshold": 2,
+              "successOutcome": {
+                "damage": -5,
+                "message": "C'├®tait une vraie potion de soin ! Vous r├®cup├®rez 5 PV."
+              },
+              "failureOutcome": {
+                "damage": 3,
+                "message": "C'├®tait du poison ! Vous perdez 3 PV."
+              }
+            }
+          },
+          {
+            "id": "refuse",
+            "text": "Refuser poliment",
+            "outcome": {
+              "message": "L'homme dispara├«t dans l'ombre avec un ricanement."
+            }
+          },
+          {
+            "id": "attack",
+            "text": "L'attaquer",
+            "outcome": {
+              "enemyId": "bandit",
+              "message": "Le rodeur sort une dague ! C'├®tait un bandit !"
+            }
+          }
+        ],
+        "classConditions": [
+          {
+            "characterClassId": "rogue",
+            "condition": "sameBackground",
+            "description": "Un ancien compagnon... Il conna├«t vos techniques !",
+            "extraRequirements": 1
+          }
+        ]
+      },
+      {
+        "id": "crypte_05",
+        "title": "La Meute",
+        "description": "Des grognements r├®sonnent dans le couloir. Une meute de loups affam├®s vous encercle ! Le chef de meute vous fixe avec des yeux terrifiants...",
+        "imageAsset": "wolf_pack",
+        "type": "combat",
+        "enemyId": "wolf",
+        "preCombatCheck": {
+          "type": "intimidation",
+          "statRequired": "charisme",
+          "threshold": 4,
+          "penaltyOnFail": "noDoubles",
+          "penaltyValue": 1,
+          "description": "Le regard du loup alpha vous glace le sang. R├®sistez ├á l'intimidation !",
+          "successMessage": "Vous soutenez son regard. Les loups h├®sitent.",
+          "failureMessage": "Vous ├¬tes terroris├® ! Vos r├®flexes sont paralys├®s. (Doubles d├®sactiv├®s)"
+        }
+      },
+      {
+        "id": "crypte_06",
+        "title": "L'Autel Profan├®",
+        "description": "Un autel couvert de sang se dresse au centre de la pi├¿ce. Un cultiste y pratique un rituel obscur. Il l├¿ve les yeux et commence ├á psalmodier une incantation terrifiante...",
+        "imageAsset": "dark_altar",
+        "type": "combat",
+        "enemyId": "cultist",
+        "preCombatCheck": {
+          "type": "surprise",
+          "statRequired": "intelligence",
+          "threshold": 3,
+          "penaltyOnFail": "lessHp",
+          "penaltyValue": 3,
+          "description": "Le cultiste lance un sort de terreur ! R├®sistez mentalement !",
+          "successMessage": "Votre esprit reste clair. Le sort n'a aucun effet.",
+          "failureMessage": "La terreur vous submerge ! Vous perdez 3 PV."
+        }
+      },
+      {
+        "id": "crypte_07",
+        "title": "Le Pi├¿ge ├á Fl├¿ches",
+        "description": "Le sol s'enfonce l├®g├¿rement sous vos pieds. Vous entendez un d├®clic m├®canique...",
+        "imageAsset": "arrow_trap",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "dodge",
+            "text": "Se jeter au sol",
+            "outcome": {
+              "statCheck": "dexterite",
+              "checkThreshold": 4,
+              "successOutcome": {
+                "message": "Vous ├®vitez les fl├¿ches de justesse !"
+              },
+              "failureOutcome": {
+                "damage": 4,
+                "message": "Plusieurs fl├¿ches vous touchent ! Vous perdez 4 PV."
+              }
+            }
+          },
+          {
+            "id": "shield",
+            "text": "Se prot├®ger",
+            "outcome": {
+              "damage": 2,
+              "message": "Vous vous prot├®gez partiellement. Vous perdez 2 PV."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_08",
+        "title": "Le Spectre Errant",
+        "description": "Une forme translucide flotte ├á travers les murs. Son regard vide se pose sur vous.",
+        "imageAsset": "ghost_room",
+        "type": "combat",
+        "enemyId": "ghost"
+      },
+      {
+        "id": "crypte_09",
+        "title": "La Fontaine Ancienne",
+        "description": "Une fontaine miraculeusement pr├®serv├®e coule encore. L'eau semble pure... ou peut-├¬tre pas.",
+        "imageAsset": "ancient_fountain",
+        "type": "choice",
+        "choices": [
+          {
+            "id": "drink",
+            "text": "Boire l'eau",
+            "outcome": {
+              "statCheck": "intelligence",
+              "checkThreshold": 3,
+              "successOutcome": {
+                "damage": -4,
+                "message": "L'eau est magique ! Vous r├®cup├®rez 4 PV."
+              },
+              "failureOutcome": {
+                "damage": 2,
+                "message": "L'eau ├®tait contamin├®e... Vous perdez 2 PV."
+              }
+            }
+          },
+          {
+            "id": "wash",
+            "text": "Se laver les blessures",
+            "outcome": {
+              "damage": -1,
+              "message": "Vous nettoyez vos plaies. Vous r├®cup├®rez 1 PV."
+            }
+          },
+          {
+            "id": "ignore",
+            "text": "Continuer sans boire",
+            "outcome": {
+              "message": "Vous d├®cidez de ne pas prendre de risque."
+            }
+          }
+        ]
+      },
+      {
+        "id": "crypte_10",
+        "title": "L'Antre du Troll",
+        "description": "L'odeur est insoutenable. Un troll des cavernes se dresse devant vous, massue en main !",
+        "imageAsset": "troll_lair",
+        "type": "combat",
+        "enemyId": "troll"
+      }
+    ],
+    "foret_maudite": [
+      {
+        "id": "forest_01",
+        "title": "L'Or├®e de la For├¬t",
+        "description": "Les arbres se resserrent autour de vous. Un gobelin surgit d'un buisson !",
+        "imageAsset": "forest_edge",
+        "type": "combat",
+        "enemyId": "goblin"
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+import { EnemiesData } from '../types/game-data.types';
+
+export const enemies: EnemiesData = {
+  standard: [
+    {
+      id: 'goblin',
+      name: 'Gobelin',
+      description: 'Une petite créature verte aux dents pointues. Faible mais vicieux.',
+      imageAsset: 'goblin',
+      damage: 1,
+      requirements: [{ stat: 'force', count: 1 }],
+    },
+    {
+      id: 'skeleton',
+      name: 'Squelette',
+      description: 'Les os cliquètent dans l\'obscurité. Rapide malgré son apparence.',
+      imageAsset: 'skeleton',
+      damage: 1,
+      requirements: [
+        { stat: 'dexterite', count: 1 },
+        { stat: 'force', count: 1 },
+      ],
+    },
+    {
+      id: 'wolf',
+      name: 'Loup Affamé',
+      description: 'Ses yeux brillent dans la pénombre. Il est rapide et mortel.',
+      imageAsset: 'wolf',
+      damage: 2,
+      requirements: [{ stat: 'dexterite', count: 2 }],
+    },
+    {
+      id: 'bandit',
+      name: 'Bandit',
+      description: 'Un brigand des chemins qui vous barre la route.',
+      imageAsset: 'bandit',
+      damage: 1,
+      requirements: [
+        { stat: 'force', count: 1 },
+        { stat: 'dexterite', count: 1 },
+      ],
+    },
+    {
+      id: 'spider',
+      name: 'Araignée Géante',
+      description: 'Ses pattes velues avancent en silence. Son venin est mortel.',
+      imageAsset: 'spider',
+      damage: 2,
+      requirements: [
+        { stat: 'dexterite', count: 2 },
+        { stat: 'intelligence', count: 1 },
+      ],
+    },
+    {
+      id: 'orc',
+      name: 'Orc Guerrier',
+      description: 'Une brute massive qui manie une hache rouillée.',
+      imageAsset: 'orc',
+      damage: 2,
+      requirements: [
+        { stat: 'force', count: 2 },
+        { stat: 'dexterite', count: 1 },
+      ],
+    },
+    {
+      id: 'ghost',
+      name: 'Spectre',
+      description: 'Une âme en peine qui glace le sang de ceux qui l\'approchent.',
+      imageAsset: 'ghost',
+      damage: 1,
+      requirements: [{ stat: 'intelligence', count: 2 }],
+    },
+    {
+      id: 'cultist',
+      name: 'Cultiste',
+      description: 'Un fanatique qui murmure des incantations obscures.',
+      imageAsset: 'cultist',
+      damage: 2,
+      requirements: [
+        { stat: 'intelligence', count: 1 },
+        { stat: 'force', count: 1 },
+      ],
+    },
+    {
+      id: 'mimic',
+      name: 'Mimic',
+      description: 'Ce coffre avait des dents ! Et il a très faim.',
+      imageAsset: 'mimic',
+      damage: 3,
+      requirements: [
+        { stat: 'dexterite', count: 1 },
+        { stat: 'intelligence', count: 1 },
+      ],
+    },
+    {
+      id: 'troll',
+      name: 'Troll des Cavernes',
+      description: 'Une créature massive qui régénère ses blessures.',
+      imageAsset: 'troll',
+      damage: 2,
+      requirements: [
+        { stat: 'force', count: 2 },
+        { stat: 'intelligence', count: 1 },
+      ],
+    },
+  ],
+  bosses: [
+    {
+      id: 'boss_necromancer',
+      name: 'Le Nécromancien',
+      description: 'Le maître des morts-vivants. Son pouvoir corrompt tout ce qu\'il touche.',
+      imageAsset: 'necromancer',
+      damage: 3,
+      requirements: [
+        { stat: 'intelligence', count: 2 },
+        { stat: 'force', count: 2 },
+        { stat: 'dexterite', count: 1 },
+      ],
+      isBoss: true,
+    },
+    {
+      id: 'boss_dragon',
+      name: 'Le Dragon Ancien',
+      description: 'Une créature légendaire dont le souffle peut faire fondre l\'acier.',
+      imageAsset: 'dragon',
+      damage: 4,
+      requirements: [
+        { stat: 'force', count: 2 },
+        { stat: 'dexterite', count: 2 },
+        { stat: 'intelligence', count: 2 },
+      ],
+      isBoss: true,
+    },
+    {
+      id: 'boss_lich',
+      name: 'La Liche',
+      description: 'Un sorcier qui a vaincu la mort elle-même. Son phylactère doit être détruit.',
+      imageAsset: 'lich',
+      damage: 3,
+      requirements: [
+        { stat: 'intelligence', count: 3 },
+        { stat: 'force', count: 1 },
+        { stat: 'dexterite', count: 1 },
+      ],
+      isBoss: true,
+    },
+  ],
+};
+

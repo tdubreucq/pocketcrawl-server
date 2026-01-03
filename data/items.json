@@ -1,0 +1,270 @@
+{
+  "items": [
+    {
+      "id": "dagger",
+      "name": "Dague",
+      "description": "Une lame courte et rapide.",
+      "type": "weaponOneHand",
+      "rarity": "uncommon",
+      "weaponEffect": {
+        "trigger": "onRoll",
+        "triggerStat": "dexterite",
+        "action": "allowReroll",
+        "usesPerCombat": 2,
+        "description": "Sur Dextérité : peut relancer (2x/combat)"
+      }
+    },
+    {
+      "id": "short_sword",
+      "name": "Épée courte",
+      "description": "Une épée légère et maniable.",
+      "type": "weaponOneHand",
+      "rarity": "uncommon",
+      "weaponEffect": {
+        "trigger": "onRoll",
+        "triggerStat": "force",
+        "action": "allowReroll",
+        "usesPerCombat": 2,
+        "description": "Sur Force : peut relancer (2x/combat)"
+      }
+    },
+    {
+      "id": "staff",
+      "name": "Bâton de mage",
+      "description": "Un bâton imprégné de magie.",
+      "type": "weaponOneHand",
+      "rarity": "uncommon",
+      "weaponEffect": {
+        "trigger": "onRoll",
+        "triggerStat": "intelligence",
+        "action": "allowReroll",
+        "usesPerCombat": 2,
+        "description": "Sur Intelligence : peut relancer (2x/combat)"
+      }
+    },
+    {
+      "id": "mace",
+      "name": "Masse",
+      "description": "Une masse contondante.",
+      "type": "weaponOneHand",
+      "rarity": "rare",
+      "weaponEffect": {
+        "trigger": "onRoll",
+        "triggerStat": "force",
+        "action": "forceDouble",
+        "usesPerCombat": 1,
+        "description": "Sur Force : transforme en double (1x/combat)"
+      }
+    },
+    {
+      "id": "flaming_sword",
+      "name": "Épée enflammée",
+      "description": "Une lame magique entourée de flammes.",
+      "type": "weaponOneHand",
+      "rarity": "rare",
+      "weaponEffect": {
+        "trigger": "onDouble",
+        "action": "blockNextAttack",
+        "description": "Sur Double : bloque un tour supplémentaire"
+      }
+    },
+    {
+      "id": "excalibur",
+      "name": "Excalibur",
+      "description": "L'épée légendaire des rois.",
+      "type": "weaponOneHand",
+      "rarity": "legendary",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "forceDouble",
+        "usesPerCombat": 2,
+        "description": "Peut forcer un double (2x/combat)"
+      }
+    },
+    {
+      "id": "great_sword",
+      "name": "Épée à deux mains",
+      "description": "Une épée massive qui nécessite deux mains.",
+      "type": "weaponTwoHand",
+      "rarity": "rare",
+      "weaponEffect": {
+        "trigger": "onRoll",
+        "triggerStat": "force",
+        "action": "forceDouble",
+        "usesPerCombat": 2,
+        "description": "Sur Force : transforme en double (2x/combat)"
+      }
+    },
+    {
+      "id": "battle_axe",
+      "name": "Hache de guerre",
+      "description": "Une hache terrifiante à deux mains.",
+      "type": "weaponTwoHand",
+      "rarity": "rare",
+      "weaponEffect": {
+        "trigger": "onDouble",
+        "action": "blockNextAttack",
+        "description": "Sur Double : bloque un tour supplémentaire"
+      }
+    },
+    {
+      "id": "war_hammer",
+      "name": "Marteau de guerre",
+      "description": "Un marteau dévastateur.",
+      "type": "weaponTwoHand",
+      "rarity": "legendary",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "allowReroll",
+        "usesPerCombat": 3,
+        "description": "Peut relancer un jet (3x/combat)"
+      }
+    },
+    {
+      "id": "dragon_slayer",
+      "name": "Tueuse de Dragons",
+      "description": "Une arme forgée pour terrasser les dragons.",
+      "type": "weaponTwoHand",
+      "rarity": "legendary",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "forceDouble",
+        "usesPerCombat": 3,
+        "description": "Peut forcer un double (3x/combat)"
+      }
+    },
+    {
+      "id": "wooden_shield",
+      "name": "Bouclier en bois",
+      "description": "Un bouclier simple mais efficace.",
+      "type": "shield",
+      "rarity": "common",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "reduceDamage",
+        "value": 1,
+        "description": "-1 dégât reçu par tour (min 1)"
+      }
+    },
+    {
+      "id": "iron_shield",
+      "name": "Bouclier en fer",
+      "description": "Un bouclier solide en fer forgé.",
+      "type": "shield",
+      "rarity": "uncommon",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "reduceDamage",
+        "value": 2,
+        "description": "-2 dégâts reçus par tour (min 1)"
+      }
+    },
+    {
+      "id": "tower_shield",
+      "name": "Pavois",
+      "description": "Un grand bouclier offrant une protection maximale.",
+      "type": "shield",
+      "rarity": "rare",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "reduceDamage",
+        "value": 3,
+        "description": "-3 dégâts reçus par tour (min 1)"
+      }
+    },
+    {
+      "id": "aegis",
+      "name": "Égide",
+      "description": "Le bouclier légendaire.",
+      "type": "shield",
+      "rarity": "legendary",
+      "weaponEffect": {
+        "trigger": "passive",
+        "action": "reduceDamage",
+        "value": 4,
+        "description": "-4 dégâts reçus par tour (min 1)"
+      }
+    },
+    {
+      "id": "small_health_potion",
+      "name": "Petite potion de vie",
+      "description": "Restaure un peu de santé. Utilisable à tout moment.",
+      "type": "healthPotion",
+      "rarity": "common",
+      "consumableEffect": {
+        "healing": 3
+      }
+    },
+    {
+      "id": "health_potion",
+      "name": "Potion de vie",
+      "description": "Restaure une bonne quantité de santé. Utilisable à tout moment.",
+      "type": "healthPotion",
+      "rarity": "uncommon",
+      "consumableEffect": {
+        "healing": 5
+      }
+    },
+    {
+      "id": "large_health_potion",
+      "name": "Grande potion de vie",
+      "description": "Restaure beaucoup de santé. Utilisable à tout moment.",
+      "type": "healthPotion",
+      "rarity": "rare",
+      "consumableEffect": {
+        "healing": 8
+      }
+    },
+    {
+      "id": "elixir_of_life",
+      "name": "Élixir de vie",
+      "description": "Restaure complètement la santé. Utilisable à tout moment.",
+      "type": "healthPotion",
+      "rarity": "legendary",
+      "consumableEffect": {
+        "healing": 15
+      }
+    },
+    {
+      "id": "potion_of_strength",
+      "name": "Potion de Force",
+      "description": "Force le prochain jet à être Force. Remplace votre action.",
+      "type": "statPotion",
+      "rarity": "uncommon",
+      "consumableEffect": {
+        "forcedStat": "force"
+      }
+    },
+    {
+      "id": "potion_of_dexterity",
+      "name": "Potion de Dextérité",
+      "description": "Force le prochain jet à être Dextérité. Remplace votre action.",
+      "type": "statPotion",
+      "rarity": "uncommon",
+      "consumableEffect": {
+        "forcedStat": "dexterite"
+      }
+    },
+    {
+      "id": "potion_of_intelligence",
+      "name": "Potion d'Intelligence",
+      "description": "Force le prochain jet à être Intelligence. Remplace votre action.",
+      "type": "statPotion",
+      "rarity": "uncommon",
+      "consumableEffect": {
+        "forcedStat": "intelligence"
+      }
+    },
+    {
+      "id": "luck_potion",
+      "name": "Potion de Chance",
+      "description": "Permet de relancer le dé après un jet. Utilisable instantanément.",
+      "type": "rerollPotion",
+      "rarity": "rare",
+      "consumableEffect": {
+        "allowsReroll": true
+      }
+    }
+  ]
+}
+

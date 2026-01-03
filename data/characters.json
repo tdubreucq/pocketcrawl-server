@@ -1,0 +1,51 @@
+[
+  {
+    "id": "warrior",
+    "name": "Le Guerrier",
+    "description": "Un combattant redoutable qui compte sur sa force brute pour vaincre ses ennemis.",
+    "portraitAsset": "warrior",
+    "force": 3,
+    "dexterite": 2,
+    "intelligence": 1,
+    "chance": 2,
+    "charisme": 1,
+    "maxHp": 22
+  },
+  {
+    "id": "rogue",
+    "name": "La Voleuse",
+    "description": "Agile et rusée, elle préfère esquiver les coups plutôt que les encaisser.",
+    "portraitAsset": "rogue",
+    "force": 1,
+    "dexterite": 3,
+    "intelligence": 2,
+    "chance": 3,
+    "charisme": 2,
+    "maxHp": 18
+  },
+  {
+    "id": "mage",
+    "name": "Le Mage",
+    "description": "Un érudit maîtrisant les arcanes, mais fragile au corps à corps.",
+    "portraitAsset": "mage",
+    "force": 1,
+    "dexterite": 2,
+    "intelligence": 3,
+    "chance": 2,
+    "charisme": 3,
+    "maxHp": 16
+  },
+  {
+    "id": "paladin",
+    "name": "La Paladine",
+    "description": "Une guerrière sainte équilibrée entre force physique et sagesse divine.",
+    "portraitAsset": "paladin",
+    "force": 2,
+    "dexterite": 2,
+    "intelligence": 2,
+    "chance": 2,
+    "charisme": 4,
+    "maxHp": 20
+  }
+]
+
